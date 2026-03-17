@@ -10,5 +10,5 @@ class Ability {
         int coolDownValue;
         int currentCoolDown;
 
-    
+    public:
 };

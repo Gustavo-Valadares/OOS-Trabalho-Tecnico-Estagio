@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Ability.hpp"
+#include "../include/Ability.hpp"
+#include "../include/Player.hpp"
 
 using namespace std;
 
@@ -11,8 +12,10 @@ class Player {
         int hp;
         int mana;
         int protection;
+        <vector>Ability abilities;
 
-    void useAbility(Ability ability){
+    public:
+        void useAbility(Ability ability){
 
-    }
+        }
 };
