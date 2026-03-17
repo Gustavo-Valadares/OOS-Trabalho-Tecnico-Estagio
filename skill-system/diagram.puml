@@ -1,0 +1,27 @@
+@startuml
+
+class Character {
+  - name: string
+  - hp: int
+  - protection: int
+  - mana: int
+  - abilities: vector<Ability>
+
+  + useAbility()
+  + consumeMana()
+}
+
+class Ability {
+  - name: string
+  - manaCost: int
+  - coolDownValue: int
+  - currentCooldown: int
+
+  + canActivate() 
+  + activate()
+  + update()
+}
+
+    Character "1" *-- "*" Ability
+
+@enduml
