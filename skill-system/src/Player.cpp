@@ -1,21 +1,18 @@
 #include <iostream>
-#include <string>
-#include <vector>
 #include "../include/Ability.hpp"
 #include "../include/Player.hpp"
 
 using namespace std;
 
-class Player {
-    private:
-        string name;
-        int hp;
-        int mana;
-        int protection;
-        <vector>Ability abilities;
+void Player::useAbility(Ability ability){
+    
+}
 
-    public:
-        void useAbility(Ability ability){
+void Player::consumeMana(int manaCost){
+    if (this->mana < manaCost){
+        cout << "Sem mana suficiente\n";
+    } else {
+        this->mana -=  manaCost;
+    }
 
-        }
-};
+}
