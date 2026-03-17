@@ -6,22 +6,32 @@
 #include <string>
 #include <vector>
 #include "Ability.hpp"
+#include "Player.hpp"
 
 using namespace std;
 
 class Player {
     private:
-        std::string name;
-        int hp;
+        string name;
         int mana;
-        int protection;
-        vector<Ability> abilities;
+        // int hp;
+        // int attack;
+        // int protection;
+        vector<int> stats; // hp, at, pt
+        vector<Ability> abilities; //heal, fireball, shield
 
     public:
         int getMana();
         int getHp();
+        int getAttack();
         int getProtection();
-        void useAbility(Ability ability);
+        string setName();
+        void setMana();
+        void setHp();
+        void setAttack();
+        void setProtection();
+        
+        void useAbility(Ability ability, int index);
         void consumeMana(int manaCost);
 };
 

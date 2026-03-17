@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include "Player.hpp"
+#include "Ability.hpp"
 
 using namespace std;
 
@@ -13,13 +14,24 @@ class Ability {
     private:
         string name;
         int manaCost;
+        int abilityPoints;
         int coolDownValue;
         int currentCoolDown;
 
     public:
-        bool canActivate(Player player);
-        void activate(Player, Ability ability);
-        void updateCoolDown(Ability ability);
+        int getManaCost();
+        int getAbilityPoints();
+        int getCoolDownValue();
+        int getCurrentCoolDown();
+        string setName();
+        void setManaCost();
+        void setCurrentCoolDown();
+        void setAbilityPoints();
+        void setCoolDownValue();
+        
+        bool canActivate();
+        // void activate(Player player);
+        void updateCoolDown(int coolDownValue);
 };
 
 #endif
