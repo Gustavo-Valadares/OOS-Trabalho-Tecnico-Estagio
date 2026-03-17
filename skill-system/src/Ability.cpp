@@ -4,17 +4,22 @@
 
 using namespace std;
 
-bool Ability::canActivate(Player player){
-    if(this->coolDownValue - this->currentCoolDown != this->coolDownValue){
+bool Ability::canActivate(){
+    if(this->currentCoolDown > 0){
         cout << "Aguarde o cooldown para usar essa habilidade";
-    } else {
-        activate(this, player);
+        return false;
     }
+    return true;
 }
 
-void Ability::activate(Ability ability){
+// void Ability::activate(Player player){
+//     if (canActivate){
+        
+//     }
+// }   
 
-}   
+void Ability::updateCoolDown(int coolDownValue){
+    this->currentCoolDown += coolDownValue;
+    // acrescentar decremento do coolDown
 
-void Ability::updateCoolDown(Ability ability){
 }
