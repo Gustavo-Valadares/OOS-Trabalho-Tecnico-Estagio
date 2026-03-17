@@ -1,27 +1,29 @@
 @startuml
 
-class Character {
-  - name: string
-  - hp: int
-  - protection: int
-  - mana: int
-  - abilities: vector<Ability>
+class Player {
+    - name: string
+    - hp: int
+    - protection: int
+    - mana: int
+    - abilities: vector<Ability>
 
-  + useAbility()
-  + consumeMana()
+    + useAbility()
+    + consumeMana()
 }
 
 class Ability {
-  - name: string
-  - manaCost: int
-  - coolDownValue: int
-  - currentCooldown: int
+    - name: string
+    - manaCost: int
+    - coolDownValue: int
+    - currentCoolDown: int
 
-  + canActivate() 
-  + activate()
-  + update()
+    ' canActivate verifica se a habilidade pode ser usada '
+    + canActivate()
+    + activate()
+    ' update atualiza o cooldown para que possa ser usado de novo '
+    + update()
 }
 
-    Character "1" *-- "*" Ability
+Player "1" *-- "*" Ability
 
 @enduml
