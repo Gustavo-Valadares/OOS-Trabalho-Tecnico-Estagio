@@ -4,6 +4,18 @@
 
 using namespace std;
 
+int Player::getMana(){
+    return this->mana;
+}
+
+int Player::getHp(){
+    return this->hp;
+}
+
+int Player::getProtection(){
+    return this->protection;
+}
+
 void Player::useAbility(Ability ability){
     
 }
