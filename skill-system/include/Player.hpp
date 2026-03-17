@@ -22,9 +22,10 @@ class Player {
 
     public:
         int getMana();
-        int getHp();
-        int getAttack();
-        int getProtection();
+        // int getHp();
+        // int getAttack();
+        // int getProtection();
+        Ability getAbility(int index);
         string setName();
         void setMana();
         void setHp();
