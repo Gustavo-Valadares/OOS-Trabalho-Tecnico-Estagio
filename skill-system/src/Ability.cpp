@@ -8,7 +8,7 @@ bool Ability::canActivate(Player player){
     if(this->coolDownValue - this->currentCoolDown != this->coolDownValue){
         cout << "Aguarde o cooldown para usar essa habilidade";
     } else {
-        activate(ability);
+        activate(this, player);
     }
 }
 

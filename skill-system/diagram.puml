@@ -21,7 +21,7 @@ class Ability {
     + canActivate()
     + activate()
     ' update atualiza o cooldown para que possa ser usado de novo '
-    + update()
+    + updateCoolDown()
 }
 
 Player "1" *-- "*" Ability
