@@ -11,8 +11,7 @@ using namespace std;
 
 class View {
     public:
-        void view(Player p1, vector<Ability> abilities);
-        void displayMenu();
+        void displayMenu(Player p1, vector<Ability> abilities);
         void displayPlayerStats(Player player);
         void abilitiesMenu(vector<Ability> abilities);
         void displayAbilites(vector<Ability> abilities);

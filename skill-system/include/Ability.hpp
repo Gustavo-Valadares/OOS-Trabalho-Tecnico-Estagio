@@ -5,8 +5,6 @@
 
 #include <iostream>
 #include <string>
-#include "Player.hpp"
-#include "Ability.hpp"
 
 using namespace std;
 
