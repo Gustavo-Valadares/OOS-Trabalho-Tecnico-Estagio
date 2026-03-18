@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void View::displayMenu(Player p1, vector<Ability> abilities){
+void View::displayMenu(Player p1){
     int command;
 
     cout << "========================================" << endl;
@@ -27,7 +27,7 @@ void View::displayMenu(Player p1, vector<Ability> abilities){
                 break;
 
             case 2:
-                displayAbilites(abilities);
+                displayAbilites(p1);
                 break;
             
             case 3:
@@ -49,7 +49,7 @@ void View::displayPlayerStats(Player player){
 
 }
 
-void View::displayAbilites(vector<Ability> abilities){
+void View::displayAbilites(Player player){
     int command;
 
     cout << "Abilities: " << endl;

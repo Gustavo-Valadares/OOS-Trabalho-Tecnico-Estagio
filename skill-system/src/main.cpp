@@ -9,7 +9,7 @@ int main(){
     Player p1;
     View v;
         
-    v.displayMenu(p1, p1.getAbilities());
+    v.displayMenu(p1);
 }
 
 
