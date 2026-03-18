@@ -22,9 +22,12 @@ class Player {
 
     public:
         int getMana();
+        string getName();
+
         // int getHp();
         // int getAttack();
         // int getProtection();
+        vector<Ability> getAbilities();
         Ability getAbility(int index);
         string setName();
         void setMana();
