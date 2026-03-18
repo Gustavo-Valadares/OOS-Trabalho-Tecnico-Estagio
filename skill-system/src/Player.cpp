@@ -4,6 +4,10 @@
 
 using namespace std;
 
+string Player::getName(){
+    return this->name;
+}
+
 int Player::getMana(){
     return this->mana;
 }
@@ -15,18 +19,6 @@ vector<Ability> Player::getAbilities(){
 Ability Player::getAbility(int index){
     return this->abilities[index];
 }
-
-// int Player::getHp(){
-//     return this->stats[0];
-// }
-
-// int Player::getAttack(){
-//     return this->stats[1];
-// }
-
-// int Player::getProtection(){
-//     return this->stats[2];
-// }
 
 void Player::useAbility(Ability ability, int index){
 

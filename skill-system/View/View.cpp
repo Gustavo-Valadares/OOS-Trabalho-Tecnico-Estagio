@@ -13,7 +13,7 @@ void View::displayMenu(Player p1, vector<Ability> abilities){
     cout << "========================================" << endl;
     cout << " [1] Player Stats                       " << endl;
     cout << " [2] Use Hability                       " << endl;
-    cout << " [3] Rest (Regenerate Mana)             " << endl;
+//  cout << " [3] Rest (Regenerate Mana)             " << endl;
     cout << " [0] Exit                               " << endl;
     cout << "----------------------------------------" << endl;
     
@@ -27,10 +27,18 @@ void View::displayMenu(Player p1, vector<Ability> abilities){
                 break;
 
             case 2:
-                abilitiesMenu(abilities);
+                displayAbilites(abilities);
                 break;
             
             case 3:
+                break;
+
+            case 0:
+                return;
+
+            default:
+                cout << "Please, type a valid command" << endl;
+                break;
         }    
     }    
 }
@@ -41,7 +49,7 @@ void View::displayPlayerStats(Player player){
 
 }
 
-void View::abilitiesMenu(vector<Ability> abilities){
+void View::displayAbilites(vector<Ability> abilities){
     int command;
 
     cout << "Abilities: " << endl;

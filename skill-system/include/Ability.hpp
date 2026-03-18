@@ -17,15 +17,18 @@ class Ability {
         int currentCoolDown;
 
     public:
+        string getName();
+
         int getManaCost();
         int getAbilityPoints();
         int getCoolDownValue();
         int getCurrentCoolDown();
+
         string setName();
-        void setManaCost();
-        void setCurrentCoolDown();
         void setAbilityPoints();
         void setCoolDownValue();
+        void setManaCost();
+        void setCurrentCoolDown();
         
         bool canActivate();
         // void activate(Player player);

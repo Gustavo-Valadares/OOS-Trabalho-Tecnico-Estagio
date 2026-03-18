@@ -11,3 +11,10 @@ int main(){
         
     v.displayMenu(p1, p1.getAbilities());
 }
+
+
+// falta fazer:
+// update cooldown
+// controller 
+// relogio global de atualização 
+// 
