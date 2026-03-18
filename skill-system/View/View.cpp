@@ -31,6 +31,7 @@ void View::displayMenu(Player p1){
                 break;
             
             case 3:
+                //ainda não implementado
                 break;
 
             case 0:
@@ -60,15 +61,22 @@ void View::displayAbilites(Player player){
 
     switch (command){
         case 1:
+            //chama o controller que atualiza os stats do player, manda o index 0
             break;
 
         case 2:
+            //chama o controller que atualiza os stats do player, manda o index 1
             break;
         
         case 3:
+            //chama o controller que atualiza os stats do player, manda o index 2
             break;
         
         case 0:
+            return ;
+
+        default:
+            cout << "Please, type a valid command" << endl;
             break;
     }
 }

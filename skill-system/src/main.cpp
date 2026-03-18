@@ -6,10 +6,13 @@
 using namespace std;
 
 int main(){
-    Player p1;
+    Player player1;
     View v;
         
-    v.displayMenu(p1);
+    v.displayMenu(player1);
+
+    cout << "Game Over!" << endl;
+    return 0;
 }
 
 
