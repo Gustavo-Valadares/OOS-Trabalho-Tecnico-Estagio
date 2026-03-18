@@ -18,7 +18,6 @@ class Ability {
 
     public:
         string getName();
-
         int getManaCost();
         int getAbilityPoints();
         int getCoolDownValue();

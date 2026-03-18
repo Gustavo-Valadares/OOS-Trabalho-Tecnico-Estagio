@@ -29,9 +29,9 @@ class Player {
         Ability getAbility(int index);
         string setName();
         void setMana();
-        void setHp();
-        void setAttack();
-        void setProtection();
+        // void setHp();
+        // void setAttack();
+        // void setProtection();
         
         void useAbility(Ability ability, int index);
         void consumeMana(int manaCost);
