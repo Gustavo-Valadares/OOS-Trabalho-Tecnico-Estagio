@@ -46,7 +46,8 @@ void Ability::setManaCost(int manaCost){
 
 bool Ability::canActivate(){
     if(this->currentCoolDown > 0){
-        cout << "Aguarde o cooldown para usar essa habilidade";
+        cout << "Wait for the cool down to use this ability again" << endl;
+        cout << "Current Cool Down: " << this->currentCoolDown << endl;
         return false;
     }
     return true;

@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include "Ability.hpp"
+#include "Stats.hpp"
 
 using namespace std;
 
@@ -14,29 +15,31 @@ class Player {
         string name;
         int mana;
         // int hp;
-        // int attackPower;
-        // int protection;
-        vector<int> stats; // hp, at, pt
-        vector<Ability> abilities; //heal, power, shield
+        // int power;
+        // int shield;
+        vector<Stats> stats; // hp, at, sh
+        vector<Ability> abilities; //heal, power, protection
 
     public:
         int getMana();
         string getName();
 
         // int getHp();
-        // int getAttack();
-        // int getProtection();
+        // int getPower();
+        // int getShield();
+        vector<Stats>& getStats();
         vector<Ability>& getAbilities();
         Ability getAbility(int index);
+        
         void setName(string name);
         void setMana(int mana);
-        // void setHp(int abilityPoints);
-        // void setAttackPower(int abilityPoints);
-        // void setProtection(int abilityPoints);
+        // void setHp(int hp);
+        // void setPower(int power);
+        // void setShield(int shield);
 
         void addPlayerStats(Player& player);
         
-        void applyAbility(Ability ability, int index);
+        void applyAbilityOnPlayer(int index);
         void consumeMana(int manaCost);
 };
 

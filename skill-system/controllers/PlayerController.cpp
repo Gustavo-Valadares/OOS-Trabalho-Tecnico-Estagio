@@ -1,20 +1,16 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include "../include/Player.hpp"
 #include "../include/Ability.hpp"
 #include "../include/PlayerController.hpp"
 
 using namespace std;
 
-void PlayerController::applyPlayerStats(Player& player1, int index){        
+void PlayerController::applyPlayerStats(Player& player, int index){        
     // Aqui será chamado use ability e aplicado no player
     // Pegar o elemento habilidade de player e aplicar redução de mana e efeito do player
 
-    //Pega a abilidade
-    Ability ability = player1.getAbility(index);
-
-    //Aplico ao player chamando o applyAbility
-    player1.applyAbility(ability, index);
 
 };
 
@@ -27,19 +23,29 @@ void PlayerController::addPlayerStats(Player& player, PlayerController& playerCo
     string name;
     int mana = 100;
     int hp = 100;
-    int attackPower = 2;
-    int protection = 0;
+    int power = 2;
+    int shield = 0;
+    vector<Stats>& stats = player.getStats();
 
-    cout << "Player stats" << endl;
+    cout << "Player Stats" << endl;
     cout << "Name: ";
     cin >> name;
     
-    cout << "Give Him Some Mana: ";
-    cin >> mana;
-    cout << endl;
+    // cout << "Give Him Some Mana: ";
+    // cin >> mana;
+    // cout << endl;
 
     player.setName(name);
     player.setMana(mana);
+        
+    stats[0].setValue(hp);
+    stats[1].setValue(power);
+    stats[2].setValue(shield);
+
+    // player.setHp(hp);
+    // player.setPower(power);
+    // player.setShield(shield);
+    
 
     return ;
 }

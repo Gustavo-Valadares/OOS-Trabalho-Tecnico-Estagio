@@ -11,14 +11,13 @@ int main(){
     PlayerController playerController;
     AbilityController abilityController;
     Player player;
-    View v;
+    View view;
 
-    v.initialMenu();
-    playerController.addPlayerStats(player, playerController);
-    abilityController.addAbilitiesStats(player, abilityController);
+    view.initialMenu();
+    playerController.addPlayerStats(player, playerController);      //Carrega o nome, mana, hp, força, e proteção inicial do jogador
+    abilityController.addAbilitiesStats(player, abilityController); //Carrega o nome, pontos e cooldown de cada habilidade
     
-
-    v.displayMenu(player);
+    view.displayMenu(player);
 
     cout << "Game Over!" << endl;
     return 0;
@@ -27,6 +26,7 @@ int main(){
 
 // falta fazer:
 // update cooldown
+// necessario fazer uma classe stats
 // refactor de AbilityController
 // refactor de PlayerController
 // refacrtor de View

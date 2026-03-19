@@ -23,7 +23,7 @@ void AbilityController::addAbilitiesStats(Player& player, AbilityController& abi
     Abilities[1].setManaCost(20);
     Abilities[1].setAbilityPoints(2);
 
-    Abilities[2].setName("Protection");
+    Abilities[2].setName("Shiled");
     Abilities[2].setManaCost(5);
     Abilities[2].setAbilityPoints(10);
 

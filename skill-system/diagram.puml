@@ -24,6 +24,15 @@ class Ability {
     + updateCoolDown()
 }
 
+class Stats {
+    - hp: int
+    - protection: int
+    - mana: int
+
+    + updateStats()
+}
+
 Player "1" *-- "*" Ability
+Player "1" *-- "*" Stats
 
 @enduml

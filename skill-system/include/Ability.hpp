@@ -28,6 +28,8 @@ class Ability {
         void setCoolDownValue(int coolDownValue);
         void setCurrentCoolDown(int currentCoolDown);
         void setManaCost(int manaCost);
+
+        void applyAbility(int index);
         
         bool canActivate();
         // void activate(Player player);

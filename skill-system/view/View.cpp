@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "../include/Player.hpp"
 #include "../include/Ability.hpp"
 #include "../include/View.hpp"
@@ -34,14 +35,17 @@ void View::displayMenu(Player& player){
         switch(command){
             case 1:
                 displayPlayerStats(player);
+                //chamar update cooldown
                 break;
 
             case 2:
                 displayAbilites(player);
+                //chamar update cooldown
                 break;
             
             case 3:
                 //ainda não implementado
+                //chamar update cooldown
                 break;
 
             case 0:
@@ -49,38 +53,58 @@ void View::displayMenu(Player& player){
 
             default:
                 cout << "Please, type a valid command" << endl;
+                //chamar update cooldown
                 break;
         }    
     }    
 }
 
 void View::displayPlayerStats(Player& player){
+    vector<Stats> stats = player.getStats();
+
     cout << "Player: " << player.getName() << endl;
-    cout << "Mana: " << player.getMana() << endl << endl;
+    cout << "HP: " << stats[0].getName() << endl;
+    cout << "Mana: " << player.getMana() << endl;
+    cout << "Power: " << stats[1].getName() << endl;
+    cout << "Shield: " << stats[2].getName() << endl << endl;
 
     return ;
 }
 
 void View::displayAbilites(Player& player){
     int command;
+    vector<Ability> abilities = player.getAbilities();
 
     cout << "Abilities: " << endl;
     cout << "========================================" << endl;
-    cout << "| [1] Fireball   [2] Heal   [3] Shield |                               " << endl;
+    cout << "| [1] " << abilities[0].getName(); cout << " ";
+    cout << "| [2] " << abilities[1].getName(); cout << " ";
+    cout << "| [3] " << abilities[2].getName(); cout << " ";
+    cout << "|" << endl;
     cout << "========================================" << endl;
     cout << " [0] Exit" << endl;
 
+    cout << "Type Your Command: ";
+    cin >> command;
+    cout << endl;
+
     switch (command){
         case 1:
+            player.applyAbilityOnPlayer(command-1);
             //chama o controller que atualiza os stats do player, manda o index 0
+            //chamar update cooldown
             break;
 
         case 2:
+            player.applyAbilityOnPlayer(command-1);
             //chama o controller que atualiza os stats do player, manda o index 1
+            //chamar update cooldown
             break;
         
         case 3:
+            player.applyAbilityOnPlayer(command-1);
             //chama o controller que atualiza os stats do player, manda o index 2
+            //chamar update cooldown
             break;
         
         case 0:
@@ -88,6 +112,7 @@ void View::displayAbilites(Player& player){
 
         default:
             cout << "Please, type a valid command" << endl;
+            //chamar update cooldown
             break;
     }
 }
