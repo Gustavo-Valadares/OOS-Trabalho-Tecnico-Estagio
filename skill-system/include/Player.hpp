@@ -14,10 +14,10 @@ class Player {
         string name;
         int mana;
         // int hp;
-        // int attack;
+        // int attackPower;
         // int protection;
         vector<int> stats; // hp, at, pt
-        vector<Ability> abilities; //heal, fireball, shield
+        vector<Ability> abilities; //heal, power, shield
 
     public:
         int getMana();
@@ -30,9 +30,9 @@ class Player {
         Ability getAbility(int index);
         void setName(string name);
         void setMana(int mana);
-        // void setHp();
-        // void setAttack();
-        // void setProtection();
+        // void setHp(int abilityPoints);
+        // void setAttackPower(int abilityPoints);
+        // void setProtection(int abilityPoints);
 
         void addPlayerStats(Player& player);
         

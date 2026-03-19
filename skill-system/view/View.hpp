@@ -13,7 +13,7 @@ class View {
         void displayMenu(Player& player);
         void displayPlayerStats(Player& player);
         void displayAbilites(Player& player);
-        void initialMenu(Player& player, PlayerController& playerController);
+        void initialMenu();
         void addPlayerStatsMenu(Player& player, PlayerController& playerController);
 };
 

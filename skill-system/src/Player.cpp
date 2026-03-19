@@ -28,7 +28,6 @@ void Player::setMana(int mana){
     this->mana = mana;
 }
 
-
 void Player::applyAbility(Ability ability, int index){
 
     if(ability.canActivate()){

@@ -5,12 +5,10 @@
 
 using namespace std;
 
-void View::initialMenu(Player& player, PlayerController& playerController){
+void View::initialMenu(){
         cout << "========================================" << endl;
         cout << "     WELCOME TO THE RPG GAME SYSTEM     " << endl;
         cout << "========================================" << endl << endl;
-
-        playerController.addPlayerStats(player);
 
         return ;
 }

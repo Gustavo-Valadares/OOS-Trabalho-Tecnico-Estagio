@@ -18,9 +18,18 @@ void PlayerController::applyPlayerStats(Player& player1, int index){
 
 };
 
-void PlayerController::addPlayerStats(Player& player){
+void PlayerController::addPlayerStats(Player& player, PlayerController& playerController){
+
+    //tudo que está abaixo deve ser um método de Player chamado addPlayerStats
+    // esta método deve apenas chamar o addPlayerStats e enviar o player
+    // devo chama-lo de initializePlayer 
+
     string name;
     int mana = 100;
+    int hp = 100;
+    int attackPower = 2;
+    int protection = 0;
+
     cout << "Player stats" << endl;
     cout << "Name: ";
     cin >> name;
