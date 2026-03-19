@@ -12,7 +12,7 @@ int Player::getMana(){
     return this->mana;
 }
 
-vector<Ability> Player::getAbilities(){
+vector<Ability>& Player::getAbilities(){
     return this->abilities;
 }
 

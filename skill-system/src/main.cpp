@@ -26,7 +26,6 @@ int main(){
 
 
 // falta fazer:
-// relogio global de atualização
 // update cooldown
 // refactor de AbilityController
 // refactor de PlayerController

@@ -26,7 +26,7 @@ class Player {
         // int getHp();
         // int getAttack();
         // int getProtection();
-        vector<Ability> getAbilities();
+        vector<Ability>& getAbilities();
         Ability getAbility(int index);
         void setName(string name);
         void setMana(int mana);

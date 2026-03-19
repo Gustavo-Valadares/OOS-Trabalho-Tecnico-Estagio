@@ -6,7 +6,7 @@
 #include <iostream>
 #include "../include/Player.hpp"
 #include "../include/Ability.hpp"
-#include "../controllers/PlayerController.hpp"
+#include "../include/PlayerController.hpp"
 
 class View {
     public:

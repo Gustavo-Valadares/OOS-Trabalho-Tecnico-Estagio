@@ -2,12 +2,14 @@
 #include <vector>
 #include "../include/Ability.hpp"
 #include "../include/Player.hpp"
-#include "AbilityController.hpp"
+#include "../include/AbilityController.hpp"
 
 using namespace std;
 
-void addAbilitiesStats(Player& player, AbilityController& abilityController){
-    vector<Ability> Abilities = player.getAbilities();
+void AbilityController::addAbilitiesStats(Player& player, AbilityController& abilityController){
+    vector<Ability>& Abilities = player.getAbilities();
+
+    Abilities.resize(3); // Ensure the vector is large enough before indexing
 
     //na verdade devo pegar colocar o que está abaixo deve ser um método da função Ability 
     // esse método deve apenas chamar o método de habilites enviando o vetor de habilidades
