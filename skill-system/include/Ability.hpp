@@ -23,11 +23,11 @@ class Ability {
         int getCoolDownValue();
         int getCurrentCoolDown();
 
-        string setName();
-        void setAbilityPoints();
-        void setCoolDownValue();
-        void setManaCost();
-        void setCurrentCoolDown();
+        void setName(string abilityName);
+        void setAbilityPoints(int abilityPoints);
+        void setCoolDownValue(int coolDownValue);
+        void setCurrentCoolDown(int currentCoolDown);
+        void setManaCost(int manaCost);
         
         bool canActivate();
         // void activate(Player player);

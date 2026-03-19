@@ -5,6 +5,7 @@
 
 #include <string>
 #include <vector>
+#include "Ability.hpp"
 
 using namespace std;
 
@@ -33,7 +34,7 @@ class Player {
         // void setAttack();
         // void setProtection();
         
-        void useAbility(Ability ability, int index);
+        void applyAbility(Ability ability, int index);
         void consumeMana(int manaCost);
 };
 

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "../include/Player.hpp"
 #include "../include/Ability.hpp"
-#include "../View/View.hpp"
+#include "../view/View.hpp"
 
 using namespace std;
 
@@ -18,6 +18,6 @@ int main(){
 
 // falta fazer:
 // update cooldown
-// controller 
+// controller (check)
 // relogio global de atualização 
 // 

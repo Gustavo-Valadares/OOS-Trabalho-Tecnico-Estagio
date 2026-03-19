@@ -20,10 +20,10 @@ Ability Player::getAbility(int index){
     return this->abilities[index];
 }
 
-void Player::useAbility(Ability ability, int index){
+void Player::applyAbility(Ability ability, int index){
 
     if(ability.canActivate()){
-        this->mana -= ability.getManaCost();    //diminui a mana do player
+        this->consumeMana(ability.getManaCost());   //diminui a mana do player
         this->stats[index] += ability.getAbilityPoints();   // aumenta a quantidade de pontos correspondente pelo index
         ability.updateCoolDown(ability.getCoolDownValue());   //aplica cooldown na habilidade
     }
