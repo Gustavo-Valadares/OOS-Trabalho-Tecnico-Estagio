@@ -11,8 +11,8 @@ using namespace std;
 class PlayerController {
 
     public:
-        void applyPlayerStats(Player player1, int index);
-        void addPlayerStats(Player *player);
+        void applyPlayerStats(Player& player1, int index);
+        void addPlayerStats(Player& player);
 
 };
 

@@ -5,17 +5,17 @@
 
 using namespace std;
 
-void View::initialMenu(Player player, PlayerController playerController){
+void View::initialMenu(Player& player, PlayerController& playerController){
         cout << "========================================" << endl;
         cout << "     WELCOME TO THE RPG GAME SYSTEM     " << endl;
         cout << "========================================" << endl << endl;
 
-        playerController.addPlayerStats(&player);
+        playerController.addPlayerStats(player);
 
         return ;
 }
 
-void View::displayMenu(Player player){
+void View::displayMenu(Player& player){
     int command;
     
     while(1){
@@ -56,14 +56,14 @@ void View::displayMenu(Player player){
     }    
 }
 
-void View::displayPlayerStats(Player player){
+void View::displayPlayerStats(Player& player){
     cout << "Player: " << player.getName() << endl;
     cout << "Mana: " << player.getMana() << endl << endl;
 
     return ;
 }
 
-void View::displayAbilites(Player player){
+void View::displayAbilites(Player& player){
     int command;
 
     cout << "Abilities: " << endl;
@@ -93,4 +93,3 @@ void View::displayAbilites(Player player){
             break;
     }
 }
-

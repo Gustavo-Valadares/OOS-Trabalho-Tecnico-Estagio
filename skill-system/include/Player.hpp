@@ -34,7 +34,7 @@ class Player {
         // void setAttack();
         // void setProtection();
 
-        void addPlayerStats(Player player);
+        void addPlayerStats(Player& player);
         
         void applyAbility(Ability ability, int index);
         void consumeMana(int manaCost);

@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void PlayerController::applyPlayerStats(Player player1, int index){        
+void PlayerController::applyPlayerStats(Player& player1, int index){        
     // Aqui será chamado use ability e aplicado no player
     // Pegar o elemento habilidade de player e aplicar redução de mana e efeito do player
 
@@ -18,7 +18,7 @@ void PlayerController::applyPlayerStats(Player player1, int index){
 
 };
 
-void PlayerController::addPlayerStats(Player *player){
+void PlayerController::addPlayerStats(Player& player){
     string name;
     int mana = 100;
     cout << "Player stats" << endl;
@@ -30,8 +30,8 @@ void PlayerController::addPlayerStats(Player *player){
     // cin >> mana;
     // cout << endl;
 
-    player->setName(name);
-    player->setMana(mana);
+    player.setName(name);
+    player.setMana(mana);
 
     return ;
 }

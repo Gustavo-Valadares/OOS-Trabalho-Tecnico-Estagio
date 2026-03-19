@@ -8,15 +8,13 @@
 #include "../include/Ability.hpp"
 #include "../controllers/PlayerController.hpp"
 
-using namespace std;
-
 class View {
     public:
-        void displayMenu(Player Player);
-        void displayPlayerStats(Player player);
-        void displayAbilites(Player player);
-        void initialMenu(Player player, PlayerController playerController);
-        void addPlayerStatsMenu(Player player, PlayerController playerController);
+        void displayMenu(Player& player);
+        void displayPlayerStats(Player& player);
+        void displayAbilites(Player& player);
+        void initialMenu(Player& player, PlayerController& playerController);
+        void addPlayerStatsMenu(Player& player, PlayerController& playerController);
 };
 
 #endif
