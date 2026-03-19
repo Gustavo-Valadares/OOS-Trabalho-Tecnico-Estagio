@@ -1,9 +1,9 @@
 #include <iostream>
-#include "../include/Player.hpp"
 #include "../include/Ability.hpp"
-#include "../controllers/PlayerController.hpp"
-#include "../controllers/AbilityController.hpp"
-#include "../view/View.hpp"
+#include "../include/Player.hpp"
+#include "../include/PlayerController.hpp"
+#include "../include/AbilityController.hpp"
+#include "../include/View.hpp"
 
 using namespace std;
 
@@ -13,8 +13,8 @@ int main(){
     Player player;
     View v;
 
-    v.initialMenu(player, playerController);
-    playerController.addPlayerStats(player);
+    v.initialMenu();
+    playerController.addPlayerStats(player, playerController);
     abilityController.addAbilitiesStats(player, abilityController);
     
 
@@ -28,3 +28,6 @@ int main(){
 // falta fazer:
 // relogio global de atualização
 // update cooldown
+// refactor de AbilityController
+// refactor de PlayerController
+// refacrtor de View

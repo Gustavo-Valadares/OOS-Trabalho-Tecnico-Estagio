@@ -1,7 +1,7 @@
 #include <iostream>
 #include "../include/Player.hpp"
 #include "../include/Ability.hpp"
-#include "View.hpp"
+#include "../include/View.hpp"
 
 using namespace std;
 
