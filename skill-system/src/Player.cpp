@@ -20,6 +20,15 @@ Ability Player::getAbility(int index){
     return this->abilities[index];
 }
 
+void Player::setName(string name){
+    this->name = name;
+}
+
+void Player::setMana(int mana){
+    this->mana = mana;
+}
+
+
 void Player::applyAbility(Ability ability, int index){
 
     if(ability.canActivate()){

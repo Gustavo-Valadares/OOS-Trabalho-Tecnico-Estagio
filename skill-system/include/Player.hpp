@@ -28,11 +28,13 @@ class Player {
         // int getProtection();
         vector<Ability> getAbilities();
         Ability getAbility(int index);
-        string setName();
-        void setMana();
+        void setName(string name);
+        void setMana(int mana);
         // void setHp();
         // void setAttack();
         // void setProtection();
+
+        void addPlayerStats(Player player);
         
         void applyAbility(Ability ability, int index);
         void consumeMana(int manaCost);

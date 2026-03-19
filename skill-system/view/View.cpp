@@ -5,29 +5,41 @@
 
 using namespace std;
 
-void View::displayMenu(Player p1){
+void View::initialMenu(Player player, PlayerController playerController){
+        cout << "========================================" << endl;
+        cout << "     WELCOME TO THE RPG GAME SYSTEM     " << endl;
+        cout << "========================================" << endl << endl;
+
+        playerController.addPlayerStats(&player);
+
+        return ;
+}
+
+void View::displayMenu(Player player){
     int command;
-
-    cout << "========================================" << endl;
-    cout << "           RPG SKILL SYSTEM             " << endl;
-    cout << "========================================" << endl;
-    cout << " [1] Player Stats                       " << endl;
-    cout << " [2] Use Hability                       " << endl;
-//  cout << " [3] Rest (Regenerate Mana)             " << endl;
-    cout << " [0] Exit                               " << endl;
-    cout << "----------------------------------------" << endl;
     
-    cout << "Type Your Command: ";
-    cin >> command;
-
     while(1){
+
+        cout << "========================================" << endl;
+        cout << "           RPG SKILL SYSTEM             " << endl;
+        cout << "========================================" << endl;
+        cout << " [1] Player Stats                       " << endl;
+        cout << " [2] Use Hability                       " << endl;
+    //  cout << " [3] Rest (Regenerate Mana)             " << endl;
+        cout << " [0] Exit                               " << endl;
+        cout << "----------------------------------------" << endl;
+
+        cout << "Type Your Command: ";
+        cin >> command;
+        cout << endl;
+
         switch(command){
             case 1:
-                displayPlayerStats(p1);
+                displayPlayerStats(player);
                 break;
 
             case 2:
-                displayAbilites(p1);
+                displayAbilites(player);
                 break;
             
             case 3:
@@ -48,6 +60,7 @@ void View::displayPlayerStats(Player player){
     cout << "Player: " << player.getName() << endl;
     cout << "Mana: " << player.getMana() << endl << endl;
 
+    return ;
 }
 
 void View::displayAbilites(Player player){
