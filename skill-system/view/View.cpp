@@ -92,35 +92,37 @@ void View::displayAbilites(Player& player){
     cin >> command;
     cout << endl;
 
-    switch (command){
-        case 1:
-            player.applyAbilityOnPlayer(command-1);
-            player.updateCooldowns();
-            //chama o controller que atualiza os stats do player, manda o index 0
-            //chamar update cooldown
-            break;
+    while(1){
+        switch (command){
+            case 1:
+                player.applyAbilityOnPlayer(command-1);
+                player.updateCooldowns();
+                //chama o controller que atualiza os stats do player, manda o index 0
+                //chamar update cooldown
+                break;
 
-        case 2:
-            player.applyAbilityOnPlayer(command-1);
-            player.updateCooldowns();
-            //chama o controller que atualiza os stats do player, manda o index 1
-            //chamar update cooldown
-            break;
-        
-        case 3:
-            player.applyAbilityOnPlayer(command-1);
-            player.updateCooldowns();
-            //chama o controller que atualiza os stats do player, manda o index 2
-            //chamar update cooldown
-            break;
-        
-        case 0:
-            player.updateCooldowns();
-            return ;
+            case 2:
+                player.applyAbilityOnPlayer(command-1);
+                player.updateCooldowns();
+                //chama o controller que atualiza os stats do player, manda o index 1
+                //chamar update cooldown
+                break;
+            
+            case 3:
+                player.applyAbilityOnPlayer(command-1);
+                player.updateCooldowns();
+                //chama o controller que atualiza os stats do player, manda o index 2
+                //chamar update cooldown
+                break;
+            
+            case 0:
+                player.updateCooldowns();
+                return ;
 
-        default:
-            cout << "Please, type a valid command" << endl;
-            //chamar update cooldown
-            break;
+            default:
+                cout << "Please, type a valid command" << endl;
+                //chamar update cooldown
+                break;
+        }
     }
 }

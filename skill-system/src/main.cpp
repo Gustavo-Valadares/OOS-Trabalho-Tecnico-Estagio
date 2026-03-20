@@ -25,9 +25,6 @@ int main(){
 
 
 // falta fazer:
-// update cooldown
-// aplicar efeitos no persongem 
-// can activate não está funcionando 
 
 // refactor de AbilityController
 // refactor de PlayerController
