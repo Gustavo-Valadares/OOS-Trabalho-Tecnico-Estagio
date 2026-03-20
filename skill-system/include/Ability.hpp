@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -20,20 +21,20 @@ class Ability {
         string getName();
         int getManaCost();
         int getAbilityPoints();
+        int getCoolDown();
         int getCoolDownValue();
-        int getCurrentCoolDown();
 
         void setName(string abilityName);
         void setAbilityPoints(int abilityPoints);
+        void setCoolDown(int currentCoolDown);
         void setCoolDownValue(int coolDownValue);
-        void setCurrentCoolDown(int currentCoolDown);
+        
         void setManaCost(int manaCost);
-
-        void applyAbility(int index);
         
         bool canActivate();
         // void activate(Player player);
-        void updateCoolDown(int coolDownValue);
+        void applyCoolDown(Ability& ability);
+        // void updateCoolDown(vector<Ability>& abilities);
 };
 
 #endif

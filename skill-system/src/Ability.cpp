@@ -20,7 +20,7 @@ int Ability::getCoolDownValue(){
     return this->coolDownValue;
 }
 
-int Ability::getCurrentCoolDown(){
+int Ability::getCoolDown(){
     return this->currentCoolDown;
 }
 
@@ -32,8 +32,8 @@ void Ability::setAbilityPoints(int abilityPoints){
     this->abilityPoints = abilityPoints;
 }
 
-void Ability::setCurrentCoolDown(int coolDownValue){
-    this->coolDownValue = coolDownValue;
+void Ability::setCoolDown(int coolDownValue){
+    this->currentCoolDown = coolDownValue;
 }
 
 void Ability::setCoolDownValue(int coolDownValue){
@@ -53,13 +53,16 @@ bool Ability::canActivate(){
     return true;
 }
 
-// void Ability::activate(Player player){
-//     if (canActivate){
-        
-//     }
-// }   
-
-void Ability::updateCoolDown(int coolDownValue){
-    this->currentCoolDown += coolDownValue;
-    // acrescentar decremento do coolDown
+void Ability::applyCoolDown(Ability& ability){
+    ability.setCoolDown(ability.getCoolDownValue());
 }
+
+// void Ability::updateCoolDown(vector<Ability>& abilities){
+//     // acrescentar decremento do coolDown
+//     for(Ability& a : abilities){
+//         if(a.getCoolDown() > 0){
+//             a.setCoolDown(a.getCoolDown() - 1);
+//             cout << "Current Cool Down: " << a.getCoolDown() << endl;
+//         } 
+//     }
+// }

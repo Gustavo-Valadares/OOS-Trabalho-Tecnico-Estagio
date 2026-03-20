@@ -23,7 +23,7 @@ void View::displayMenu(Player& player){
         cout << "           RPG SKILL SYSTEM             " << endl;
         cout << "========================================" << endl;
         cout << " [1] Player Stats                       " << endl;
-        cout << " [2] Use Hability                       " << endl;
+        cout << " [2] Use Ability                       " << endl;
     //  cout << " [3] Rest (Regenerate Mana)             " << endl;
         cout << " [0] Exit                               " << endl;
         cout << "----------------------------------------" << endl;
@@ -35,17 +35,21 @@ void View::displayMenu(Player& player){
         switch(command){
             case 1:
                 displayPlayerStats(player);
+                player.updateCooldowns();
                 //chamar update cooldown
                 break;
 
             case 2:
                 displayAbilites(player);
+                player.updateCooldowns();
                 //chamar update cooldown
                 break;
             
             case 3:
+                player.updateCooldowns();
                 //ainda não implementado
                 //chamar update cooldown
+                //
                 break;
 
             case 0:
@@ -91,23 +95,27 @@ void View::displayAbilites(Player& player){
     switch (command){
         case 1:
             player.applyAbilityOnPlayer(command-1);
+            player.updateCooldowns();
             //chama o controller que atualiza os stats do player, manda o index 0
             //chamar update cooldown
             break;
 
         case 2:
             player.applyAbilityOnPlayer(command-1);
+            player.updateCooldowns();
             //chama o controller que atualiza os stats do player, manda o index 1
             //chamar update cooldown
             break;
         
         case 3:
             player.applyAbilityOnPlayer(command-1);
+            player.updateCooldowns();
             //chama o controller que atualiza os stats do player, manda o index 2
             //chamar update cooldown
             break;
         
         case 0:
+            player.updateCooldowns();
             return ;
 
         default:

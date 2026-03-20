@@ -65,25 +65,32 @@ vector<Ability>& Player::getAbilities(){
 void Player::applyAbilityOnPlayer(int index){
     Ability& ability = this->getAbility(index);
     Stats& playerStat = this->getStat(index);
-    int newStatValue = ability.getAbilityPoints();
 
     if(ability.canActivate()){
         this->consumeMana(ability.getManaCost());   //diminui a mana do player
 
         playerStat.setValue(playerStat.getValue() + ability.getAbilityPoints());   // aplica o efeito da habilidade
  
-        ability.updateCoolDown(ability.getCoolDownValue());   //aplica cooldown na habilidade
+        ability.applyCoolDown(this->getAbility(index));   //aplica cooldown na habilidade
 
         cout << ability.getName() << " used" << endl;
         cout << "Wait for the cool down to use it again"<< endl;
-        cout << "Current Cool Down: " << ability.getCurrentCoolDown() << endl;
+        cout << "Current Cool Down: " << ability.getCoolDown() << endl;
 
     } 
 }
 
+void Player::updateCooldowns() {
+    for(auto& a : this->abilities) {
+        if(a.getCoolDown() > 0) {
+            a.setCoolDown(a.getCoolDown() - 1);
+        }
+    }
+}
+
 void Player::consumeMana(int manaCost){
     if (this->mana < manaCost){
-        cout << "You dont have enoguh mana\n";
+        cout << "Not enough mana" << endl;
         cout << "Current Mana: " << this->mana << endl;
         cout << "Ability Mana Cost: " << manaCost << endl;
     } else {

@@ -39,7 +39,7 @@ class Player {
         // void setShield(int shield);
 
         void addPlayerStats(Player& player);
-        
+        void updateCooldowns();
         void applyAbilityOnPlayer(int index);
         void consumeMana(int manaCost);
 };
