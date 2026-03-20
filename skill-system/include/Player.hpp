@@ -38,6 +38,7 @@ class Player {
         // void setPower(int power);
         // void setShield(int shield);
 
+        void regenerateMana();
         void addPlayerStats(Player& player);
         void updateCooldowns();
         void applyAbilityOnPlayer(int index);

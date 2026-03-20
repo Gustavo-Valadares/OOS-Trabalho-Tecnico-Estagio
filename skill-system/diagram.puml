@@ -2,32 +2,30 @@
 
 class Player {
     - name: string
-    - hp: int
-    - protection: int
-    - mana: int
+    - int mana
+    - stats: vector<Stats>
     - abilities: vector<Ability>
 
-    + useAbility()
+    + addPlayerStats()
+    + updateCoolDowns()
+    + applyAbilityOnPlayer()
     + consumeMana()
 }
 
 class Ability {
     - name: string
     - manaCost: int
+    - abilityPoints: int
     - coolDownValue: int
     - currentCoolDown: int
 
-    ' canActivate verifica se a habilidade pode ser usada '
     + canActivate()
-    + activate()
-    ' update atualiza o cooldown para que possa ser usado de novo '
-    + updateCoolDown()
+    + applyCoolDown()
 }
 
 class Stats {
-    - hp: int
-    - protection: int
-    - mana: int
+    - name: string
+    - value: int
 
     + updateStats()
 }

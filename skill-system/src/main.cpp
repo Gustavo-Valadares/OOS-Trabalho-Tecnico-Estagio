@@ -25,10 +25,11 @@ int main(){
 
 
 // falta fazer:
+// Criar Read.me
 
-// refactor de AbilityController
 // refactor de PlayerController
-// refacrtor de View
+// refactor de AbilityController
+// refactor de View
 
 //se der:
 //mana regen

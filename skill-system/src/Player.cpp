@@ -98,3 +98,9 @@ void Player::consumeMana(int manaCost){
     }
 
 }
+
+void Player::regenerateMana(){
+    this->setMana(this->getMana() + 20);
+    cout << "You rest by a campfire nearby" << endl;
+    cout << "You regenerate a bit off mana" << endl;
+}
