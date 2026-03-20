@@ -9,7 +9,7 @@ using namespace std;
 void View::initialMenu(){
         cout << "========================================" << endl;
         cout << "     WELCOME TO THE RPG GAME SYSTEM     " << endl;
-        cout << "========================================" << endl << endl;
+        cout << "========================================" << endl;
 
         return ;
 }
@@ -63,10 +63,10 @@ void View::displayPlayerStats(Player& player){
     vector<Stats> stats = player.getStats();
 
     cout << "Player: " << player.getName() << endl;
-    cout << "HP: " << stats[0].getName() << endl;
+    cout << "HP: " << stats[0].getValue() << endl;
     cout << "Mana: " << player.getMana() << endl;
-    cout << "Power: " << stats[1].getName() << endl;
-    cout << "Shield: " << stats[2].getName() << endl << endl;
+    cout << "Power: " << stats[1].getValue() << endl;
+    cout << "Shield: " << stats[2].getValue() << endl << endl;
 
     return ;
 }

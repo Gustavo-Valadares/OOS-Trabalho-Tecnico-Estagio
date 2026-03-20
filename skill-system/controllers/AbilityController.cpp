@@ -18,14 +18,17 @@ void AbilityController::addAbilitiesStats(Player& player, AbilityController& abi
     Abilities[0].setName("Heal");
     Abilities[0].setManaCost(10);
     Abilities[0].setAbilityPoints(10);
+    Abilities[0].setCoolDownValue(5);
 
     Abilities[1].setName("Strenght");
     Abilities[1].setManaCost(20);
     Abilities[1].setAbilityPoints(2);
+    Abilities[1].setCoolDownValue(10);
 
     Abilities[2].setName("Shiled");
     Abilities[2].setManaCost(5);
     Abilities[2].setAbilityPoints(10);
+    Abilities[2].setCoolDownValue(7);
 
 }
     

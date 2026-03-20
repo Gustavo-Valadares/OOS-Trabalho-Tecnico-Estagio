@@ -29,7 +29,8 @@ class Player {
         // int getShield();
         vector<Stats>& getStats();
         vector<Ability>& getAbilities();
-        Ability getAbility(int index);
+        Stats& getStat(int index);
+        Ability& getAbility(int index);
         
         void setName(string name);
         void setMana(int mana);

@@ -30,17 +30,27 @@ void PlayerController::addPlayerStats(Player& player, PlayerController& playerCo
     cout << "Player Stats" << endl;
     cout << "Name: ";
     cin >> name;
+    cout << endl;
     
     // cout << "Give Him Some Mana: ";
     // cin >> mana;
     // cout << endl;
-
+    
     player.setName(name);
+
     player.setMana(mana);
-        
+
+    stats.resize(3); // Garante que o vetor tenha espaço suficiente para os 3 status. inicia vazio, resize aloca memória
+
+    stats[0].setName("HP");
     stats[0].setValue(hp);
+
+    stats[1].setName("Power");
     stats[1].setValue(power);
+
+    stats[2].setName("Shield");
     stats[2].setValue(shield);
+
 
     // player.setHp(hp);
     // player.setPower(power);

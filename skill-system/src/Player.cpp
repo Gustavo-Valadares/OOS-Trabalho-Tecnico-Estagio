@@ -33,16 +33,20 @@ void Player::setMana(int mana){
 //     return this->shield;
 // }
 
+Stats& Player::getStat(int index){
+    return this->stats[index];
+}
+
 vector<Stats>& Player::getStats(){
     return this->stats;
 }
 
-vector<Ability>& Player::getAbilities(){
-    return this->abilities;
+Ability& Player::getAbility(int index){
+    return this->abilities[index];
 }
 
-Ability Player::getAbility(int index){
-    return this->abilities[index];
+vector<Ability>& Player::getAbilities(){
+    return this->abilities;
 }
 
 
@@ -59,19 +63,19 @@ Ability Player::getAbility(int index){
 // }
 
 void Player::applyAbilityOnPlayer(int index){
-    Ability ability = this->getAbility(index);
+    Ability& ability = this->getAbility(index);
+    Stats& playerStat = this->getStat(index);
+    int newStatValue = ability.getAbilityPoints();
 
     if(ability.canActivate()){
         this->consumeMana(ability.getManaCost());   //diminui a mana do player
 
-        
-        // this->stats[index] += ability.getAbilityPoints();   // aumenta a quantidade de pontos correspondente pelo index
-
-
+        playerStat.setValue(playerStat.getValue() + ability.getAbilityPoints());   // aplica o efeito da habilidade
+ 
         ability.updateCoolDown(ability.getCoolDownValue());   //aplica cooldown na habilidade
 
-        cout << ability.getName() << "used" << endl;
-        cout << "wait for the cool down to use it again"<< endl;
+        cout << ability.getName() << " used" << endl;
+        cout << "Wait for the cool down to use it again"<< endl;
         cout << "Current Cool Down: " << ability.getCurrentCoolDown() << endl;
 
     } 

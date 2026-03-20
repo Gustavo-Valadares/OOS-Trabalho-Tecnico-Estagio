@@ -26,7 +26,12 @@ int main(){
 
 // falta fazer:
 // update cooldown
-// necessario fazer uma classe stats
+// aplicar efeitos no persongem 
+// can activate não está funcionando 
+
 // refactor de AbilityController
 // refactor de PlayerController
 // refacrtor de View
+
+//se der:
+//mana regen
