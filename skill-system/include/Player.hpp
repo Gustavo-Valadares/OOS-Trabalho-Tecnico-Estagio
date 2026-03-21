@@ -16,20 +16,16 @@ class Player {
         int hp;
         int strenght;
         int shield;
-        // vector<Stats> stats; // hp, at, sh
         vector<Ability*> abilities; //heal, power, protection
 
     public:
-        int getMana();
         string getName();
-
+        int getMana();
         int getHp();
         int getStrenght();
         int getShield();
-        // vector<Stats>& getStats();
-        vector<Ability*>& getAbilities();
-        // Stats& getStat(int index);
         Ability* getAbility(int index);
+        vector<Ability*>& getAbilities();
         
         void setName(string name);
         void setMana(int mana);

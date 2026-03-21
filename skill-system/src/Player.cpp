@@ -4,55 +4,31 @@
 
 using namespace std;
 
-string Player::getName(){
-    return this->name;
-}
+string Player::getName(){ return this->name; }
 
-int Player::getMana(){
-    return this->mana;
-}
+int Player::getMana(){ return this->mana; }
 
-void Player::setName(string name){
-    this->name = name;
-}
+int Player::getHp(){ return this->hp; }
 
-void Player::setMana(int mana){
-    this->mana = mana;
-}
+int Player::getStrenght(){ return this->strenght; }
+
+int Player::getShield(){ return this->shield; }
+
+Ability* Player::getAbility(int index){ return this->abilities[index]; }
+
+vector<Ability*>& Player::getAbilities(){ return this->abilities; }
 
 
-int Player::getHp(){
-    return this->hp;
-}
+void Player::setName(string name){ this->name = name; }
 
-int Player::getStrenght(){
-    return this->strenght;
-}
+void Player::setMana(int mana){ this->mana = mana; }
 
-int Player::getShield(){
-    return this->shield;
-}
+void Player::setHp(int hp){ this->hp = hp; }
 
-Ability* Player::getAbility(int index){
-    return this->abilities[index];
-}
+void Player::setStrenght(int strenght){ this->strenght = strenght; }
 
-vector<Ability*>& Player::getAbilities(){
-    return this->abilities;
-}
+void Player::setShield(int shield){ this->shield = shield; }
 
-
-void Player::setHp(int hp){
-    this->hp = hp;
-}
-
-void Player::setStrenght(int strenght){
-    this->strenght = strenght;
-}
-
-void Player::setShield(int shield){
-    this->shield = shield;
-}
 
 void Player::applyAbilityOnPlayer(int index){
     Ability* ability = this->getAbility(index);
