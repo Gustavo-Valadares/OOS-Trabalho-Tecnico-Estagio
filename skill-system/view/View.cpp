@@ -65,13 +65,11 @@ void View::displayMenu(Player& player){
 }
 
 void View::displayPlayerStats(Player& player){
-    vector<Stats> stats = player.getStats();
-
     cout << "Player: " << player.getName() << endl;
-    cout << "HP: " << stats[0].getValue() << endl;
+    cout << "HP: " << player.getHp() << endl;
     cout << "Mana: " << player.getMana() << endl;
-    cout << "Power: " << stats[1].getValue() << endl;
-    cout << "Shield: " << stats[2].getValue() << endl << endl;
+    cout << "Strenght: " << player.getStrenght() << endl;
+    cout << "Shield: " << player.getShield() << endl << endl;
 
     return ;
 }
