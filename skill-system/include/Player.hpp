@@ -18,7 +18,7 @@ class Player {
         // int power;
         // int shield;
         vector<Stats> stats; // hp, at, sh
-        vector<Ability> abilities; //heal, power, protection
+        vector<Ability*> abilities; //heal, power, protection
 
     public:
         int getMana();
@@ -28,16 +28,18 @@ class Player {
         // int getPower();
         // int getShield();
         vector<Stats>& getStats();
-        vector<Ability>& getAbilities();
+        vector<Ability*>& getAbilities();
         Stats& getStat(int index);
-        Ability& getAbility(int index);
+        Ability* getAbility(int index);
         
         void setName(string name);
         void setMana(int mana);
         // void setHp(int hp);
         // void setPower(int power);
         // void setShield(int shield);
-
+        void increaseHp(int value);
+        void increaseShield(int value);
+        void increaseStrength(int value);
         void regenerateMana();
         void addPlayerStats(Player& player);
         void updateCooldowns();

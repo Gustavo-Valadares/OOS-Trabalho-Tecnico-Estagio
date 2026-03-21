@@ -9,6 +9,8 @@
 
 using namespace std;
 
+class Player;
+
 class Ability {
     private:
         string name;
@@ -18,6 +20,9 @@ class Ability {
         int currentCoolDown;
 
     public:
+        virtual void applyEffect(Player& player) = 0;
+        virtual ~Ability() = default;
+
         string getName();
         int getManaCost();
         int getAbilityPoints();
@@ -31,9 +36,9 @@ class Ability {
         
         void setManaCost(int manaCost);
         
-        bool canActivate();
-        // void activate(Player player);
-        void applyCoolDown(Ability& ability);
+        bool canActivate(Player& player);
+        void activate(Player& player);
+        // void applyCoolDown(Ability& ability);
         // void updateCoolDown(vector<Ability>& abilities);
 };
 

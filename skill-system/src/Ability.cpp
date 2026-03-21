@@ -44,18 +44,36 @@ void Ability::setManaCost(int manaCost){
     this->manaCost = manaCost;
 }
 
-bool Ability::canActivate(){
+bool Ability::canActivate(Player& player){
     if(this->currentCoolDown > 0){
-        cout << "Wait for the cool down to use this ability again" << endl;
+        cout << this->getName() << " on cooldown" << endl;
         cout << "Current Cool Down: " << this->currentCoolDown << endl;
         return false;
     }
+
+    if(player.getMana() < manaCost){
+        cout << "Not enought mana, try resting a little" << endl;
+        return false;
+    }
+
     return true;
 }
 
-void Ability::applyCoolDown(Ability& ability){
-    ability.setCoolDown(ability.getCoolDownValue());
+void Ability::activate(Player& player){
+    if (canActivate(player)){
+        player.consumeMana(manaCost); // diminui mana do player
+        applyEffect(player); // polimorfismo 
+        currentCoolDown = coolDownValue;
+
+        cout << this->getName() << " used" << endl;
+    }
+
+
 }
+
+// void Ability::applyCoolDown(Ability& ability){
+//     ability.setCoolDown(ability.getCoolDownValue());
+// }
 
 // void Ability::updateCoolDown(vector<Ability>& abilities){
 //     // acrescentar decremento do coolDown

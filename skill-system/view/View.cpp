@@ -78,22 +78,23 @@ void View::displayPlayerStats(Player& player){
 
 void View::displayAbilites(Player& player){
     int command;
-    vector<Ability> abilities = player.getAbilities();
+    vector<Ability*> abilities = player.getAbilities();
 
     cout << "Abilities: " << endl;
     cout << "========================================" << endl;
-    cout << "| [1] " << abilities[0].getName(); cout << " ";
-    cout << "| [2] " << abilities[1].getName(); cout << " ";
-    cout << "| [3] " << abilities[2].getName(); cout << " ";
+    cout << "| [1] " << abilities[0]->getName(); cout << " ";
+    cout << "| [2] " << abilities[1]->getName(); cout << " ";
+    cout << "| [3] " << abilities[2]->getName(); cout << " ";
     cout << "|" << endl;
     cout << "========================================" << endl;
     cout << " [0] Exit" << endl;
 
-    cout << "Type Your Command: ";
-    cin >> command;
-    cout << endl;
 
     while(1){
+        cout << "Type Your Command: ";
+        cin >> command;
+        cout << endl;
+
         switch (command){
             case 1:
                 player.applyAbilityOnPlayer(command-1);

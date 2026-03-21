@@ -7,13 +7,6 @@
 
 using namespace std;
 
-void PlayerController::applyPlayerStats(Player& player, int index){        
-    // Aqui será chamado use ability e aplicado no player
-    // Pegar o elemento habilidade de player e aplicar redução de mana e efeito do player
-
-
-};
-
 void PlayerController::addPlayerStats(Player& player, PlayerController& playerController){
 
     //tudo que está abaixo deve ser um método de Player chamado addPlayerStats
