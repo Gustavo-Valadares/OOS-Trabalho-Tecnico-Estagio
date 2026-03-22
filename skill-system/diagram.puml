@@ -23,14 +23,6 @@ class Ability {
     + applyCoolDown()
 }
 
-class Stats {
-    - name: string
-    - value: int
-
-    + updateStats()
-}
-
 Player "1" *-- "*" Ability
-Player "1" *-- "*" Stats
 
 @enduml

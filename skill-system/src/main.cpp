@@ -14,10 +14,6 @@ int main(){
     View view;
 
     player.initializeAbilities();
-    
-    abilities.push_back(new Heal());
-    abilities.push_back(new Strength());
-    abilities.push_back(new Shield());
 
     view.initialMenu();
     view.displayMenu(player);
@@ -29,9 +25,7 @@ int main(){
 
 // falta fazer:
 
-// Mudar nome strenght pra strength
 // criar desctrutors
-// remover controllers 
 
 // Criar Read.me
 
