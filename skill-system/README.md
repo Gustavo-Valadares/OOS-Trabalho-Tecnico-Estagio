@@ -29,5 +29,5 @@ Possíveis expansões futuras incluem:
 
 * **Linguagem**: C++.
 * **Como Rodar**: 
-Compilar: g++ -I./include src/*.cpp view/*cpp -o run
-Executar: ./run
+ **Compilar: "g++ -I./include src/*.cpp view/*cpp -o run"
+ **Executar: ./run
