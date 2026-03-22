@@ -20,8 +20,10 @@ class Ability {
         int currentCoolDown;
 
     public:
-        virtual void applyEffect(Player& player) = 0;
+        Ability(string name, int manaCost, int abilityPoints, int cooldown);
         virtual ~Ability() = default;
+        virtual void applyEffect(Player& player) = 0;
+        
 
         string getName();
         int getManaCost();

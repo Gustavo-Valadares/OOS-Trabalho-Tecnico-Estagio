@@ -68,7 +68,7 @@ void View::displayPlayerStats(Player& player){
     cout << "Player: " << player.getName() << endl;
     cout << "HP: " << player.getHp() << endl;
     cout << "Mana: " << player.getMana() << endl;
-    cout << "Strenght: " << player.getStrenght() << endl;
+    cout << "Strength: " << player.getStrength() << endl;
     cout << "Shield: " << player.getShield() << endl << endl;
 
     return ;

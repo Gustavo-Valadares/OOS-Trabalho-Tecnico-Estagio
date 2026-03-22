@@ -1,8 +1,24 @@
 #include <iostream>
 #include "../include/Ability.hpp"
 #include "../include/Player.hpp"
+#include "../include/Heal.hpp"
+#include "../include/Strength.hpp"
+#include "../include/Shield.hpp"
 
 using namespace std;
+
+Player::Player(string name)
+    : name(name),
+      mana(100),
+      hp(100),
+      strength(),
+      shield(0) {}
+
+Player::~Player(){
+    for(auto* a : abilities){
+        delete a;
+    }
+}
 
 string Player::getName(){ return this->name; }
 
@@ -10,7 +26,7 @@ int Player::getMana(){ return this->mana; }
 
 int Player::getHp(){ return this->hp; }
 
-int Player::getStrenght(){ return this->strenght; }
+int Player::getStrength(){ return this->strength; }
 
 int Player::getShield(){ return this->shield; }
 
@@ -25,7 +41,7 @@ void Player::setMana(int mana){ this->mana = mana; }
 
 void Player::setHp(int hp){ this->hp = hp; }
 
-void Player::setStrenght(int strenght){ this->strenght = strenght; }
+void Player::setStrength(int strength){ this->strength = strength; }
 
 void Player::setShield(int shield){ this->shield = shield; }
 
@@ -46,20 +62,12 @@ void Player::updateCooldowns() {
 }
 
 void Player::consumeMana(int manaCost){
-    if (this->mana < manaCost){
-        cout << "Not enough mana" << endl;
-        cout << "Current Mana: " << this->mana << endl;
-        cout << "Ability Mana Cost: " << manaCost << endl;
-    } else {
         this->mana -=  manaCost;
-    }
-
 }
 
 void Player::regenerateMana(){
     this->setMana(this->getMana() + 20);
-    cout << "You rest by a campfire nearby" << endl;
-    cout << "A bit of mana was regenerated" << endl;
+    cout << "You rest by a campfire nearby, A bit of mana was regenerated" << endl;
 }
 
 void Player::increaseHp(int value){
@@ -67,9 +75,15 @@ void Player::increaseHp(int value){
 }
 
 void Player::increaseStrength(int value){
-    this->strenght += value;
+    this->strength += value;
 }
 
 void Player::increaseShield(int value){
     this->shield += value;
+}
+
+void Player::initializeAbilities(){
+    abilities.push_back(new Heal());
+    abilities.push_back(new Strength());
+    abilities.push_back(new Shield());
 }

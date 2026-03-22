@@ -1,2 +1,2 @@
-g++ -I./include src/*.cpp controllers/*.cpp view/*cpp -o run
+g++ -I./include src/*.cpp view/*cpp -o run
 

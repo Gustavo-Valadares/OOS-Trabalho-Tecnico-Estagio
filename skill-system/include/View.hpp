@@ -6,7 +6,6 @@
 #include <iostream>
 #include "../include/Player.hpp"
 #include "../include/Ability.hpp"
-#include "../include/PlayerController.hpp"
 
 class View {
     public:
@@ -14,7 +13,6 @@ class View {
         void displayPlayerStats(Player& player);
         void displayAbilites(Player& player);
         void initialMenu();
-        void addPlayerStatsMenu(Player& player, PlayerController& playerController);
 };
 
 #endif

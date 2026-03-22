@@ -1,22 +1,25 @@
 #include <iostream>
 #include "../include/Ability.hpp"
 #include "../include/Player.hpp"
-#include "../include/PlayerController.hpp"
-#include "../include/AbilityController.hpp"
+#include "../include/Heal.hpp"
+#include "../include/Strength.hpp"
+#include "../include/Shield.hpp"
 #include "../include/View.hpp"
 
 using namespace std;
 
 int main(){
-    PlayerController playerController;
-    AbilityController abilityController;
-    Player player;
+    Player player("");
+    vector<Ability*>& abilities = player.getAbilities();
     View view;
 
-    view.initialMenu();
-    playerController.addPlayerStats(player, playerController);      //Carrega o nome, mana, hp, força, e proteção inicial do jogador
-    abilityController.addAbilitiesStats(player, abilityController); //Carrega o nome, pontos e cooldown de cada habilidade
+    player.initializeAbilities();
     
+    abilities.push_back(new Heal());
+    abilities.push_back(new Strength());
+    abilities.push_back(new Shield());
+
+    view.initialMenu();
     view.displayMenu(player);
 
     cout << "Game Over!" << endl;
@@ -26,10 +29,12 @@ int main(){
 
 // falta fazer:
 
-// refazer lógica de status
+// Mudar nome strenght pra strength
+// criar desctrutors
+// remover controllers 
 
 // Criar Read.me
 
-// refactor de PlayerController
-// refactor de AbilityController
+// criar uml
+
 // refactor de View

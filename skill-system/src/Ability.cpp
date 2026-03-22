@@ -4,6 +4,13 @@
 
 using namespace std;
 
+Ability::Ability(string name, int manaCost, int abilityPoints, int cooldown)
+    : name(name),
+      manaCost(manaCost),
+      abilityPoints(abilityPoints),
+      coolDownValue(cooldown),
+      currentCoolDown(0) {}
+
 string Ability::getName(){ return this->name; }
 
 int Ability::getManaCost(){ return this->manaCost; }
@@ -28,8 +35,7 @@ void Ability::setCoolDownValue(int coolDownValue){ this->coolDownValue = coolDow
 
 bool Ability::canActivate(Player& player){
     if(this->currentCoolDown > 0){
-        cout << this->getName() << " on cooldown" << endl;
-        cout << "Current Cool Down: " << this->currentCoolDown << endl;
+        cout << this->getName() << " on cooldown " << "(" << this->currentCoolDown << ")" << endl;
         return false;
     }
 
