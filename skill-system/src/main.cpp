@@ -25,10 +25,44 @@ int main(){
 
 // falta fazer:
 
-// criar desctrutors
-
 // Criar Read.me
 
 // criar uml
 
+// olhar a possibilidade de criação de uma gameplay simples ✓
+// limitar mana e hp ✓
+
+
+// caso ganhe a luta: + força ✓
+// caso perca: -hp, -shield ✓
+// balancear o dano com o shield ✓
+// aumentar cooldown da habilidades 
+// hp = 0 -> game over 
+// todo inimigo vai dar 2*difficuldade de dano. esses pontos devem ser tirado primeiro do shield depois da vida do player
+
 // refactor de View
+
+
+/*
+
+void Player::adventure(){
+    int difficulty = rand() % 20 + 5;
+
+    cout << "You encountered an enemy!" << endl;
+    cout << "Enemy difficulty: " << difficulty << endl;
+
+    if(this->getStrenght() >= difficulty){
+        cout << "You won the fight!" << endl;
+
+        this->increaseStrength(2);
+        this->increaseHp(5);
+
+        cout << "You feel stronger." << endl;
+    } else {
+        cout << "You lost the fight..." << endl;
+
+        this->setHp(this->getHp() - 10);
+    }
+}
+
+*/

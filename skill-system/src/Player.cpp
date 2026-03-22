@@ -46,6 +46,45 @@ void Player::setStrength(int strength){ this->strength = strength; }
 void Player::setShield(int shield){ this->shield = shield; }
 
 
+void Player::adventure(){
+    int difficulty = rand() % 20 + 5;
+
+    cout << "An enemy approach!" << endl;
+    cout << "Enemy difficulty: " << difficulty << endl << endl;
+
+    if(rand() % 100 < 20){
+        cout << "You hit him with a critical!" << endl;
+        cout << "You feel really stronger." << endl << endl;
+        this->increaseStrength(6);
+
+        return ;
+    }
+
+    if(this->getStrength() >= difficulty){
+        cout << "The enemy wasnt a match for your power!" << endl;
+        this->increaseStrength(4);
+        cout << "You feel stronger." << endl;
+
+    } else {
+        cout << "He was too strong for you" << endl;
+        
+        int enemyHit = 2*difficulty;
+
+        if(enemyHit > this->getShield()){
+            this->setShield(0);
+        }
+
+        enemyHit -= this->getShield();
+
+        if(enemyHit > 0){
+            this->setHp(this->getHp() - enemyHit);
+        }
+
+    }
+
+    return ;
+}
+
 void Player::applyAbilityOnPlayer(int index){
     Ability* ability = this->getAbility(index);
 
@@ -86,4 +125,12 @@ void Player::initializeAbilities(){
     abilities.push_back(new Heal());
     abilities.push_back(new Strength());
     abilities.push_back(new Shield());
+}
+
+bool Player::isDead(){
+    if(this->getHp() > 0){
+        return false;
+    } 
+
+    return true;
 }

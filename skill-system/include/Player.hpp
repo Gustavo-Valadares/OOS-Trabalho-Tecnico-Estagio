@@ -41,10 +41,11 @@ class Player {
         void increaseStrength(int value);
         void initializeAbilities();
         void regenerateMana();
-        void addPlayerStats(Player& player);
+        void adventure();
         void updateCooldowns();
         void applyAbilityOnPlayer(int index);
         void consumeMana(int manaCost);
+        bool isDead();
 };
 
 #endif

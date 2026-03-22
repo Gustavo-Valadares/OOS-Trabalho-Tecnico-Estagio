@@ -18,13 +18,18 @@ void View::displayMenu(Player& player){
     int command;
     
     while(1){
+        if(player.isDead()){
+            cout << "You Died" << endl << endl;
+            return ;
+        }
 
         cout << "========================================" << endl;
         cout << "           RPG SKILL SYSTEM             " << endl;
         cout << "========================================" << endl;
         cout << " [1] Player Stats                       " << endl;
-        cout << " [2] Use Ability                       " << endl;
+        cout << " [2] Use Ability                        " << endl;
         cout << " [3] Rest (Regenerate Mana)             " << endl;
+        cout << " [4] Adventure                          " << endl;
         cout << " [0] Exit                               " << endl;
         cout << "----------------------------------------" << endl;
 
@@ -46,9 +51,17 @@ void View::displayMenu(Player& player){
                 break;
             
             case 3:
-                player.regenerateMana();
-                player.updateCooldowns();
-                player.updateCooldowns();
+                if(player.getMana() < 100){
+                    player.regenerateMana();
+                    for(int i = 0; i < 2; i++) player.updateCooldowns();
+                } else {
+                    cout << "You Already have maximum Mana" << endl;
+                }
+
+                break;
+
+            case 4:
+                player.adventure();
                 player.updateCooldowns();
 
                 break;
@@ -95,23 +108,30 @@ void View::displayAbilites(Player& player){
 
         switch (command){
             case 1:
-                player.applyAbilityOnPlayer(command-1);
+                if(player.getHp() < 100){
+                    player.applyAbilityOnPlayer(command-1);
+                } else {
+                    cout << "You Already have maximum HP" << endl;
+                }
+
                 player.updateCooldowns();
-                //chama o controller que atualiza os stats do player, manda o index 0
                 
                 break;
 
             case 2:
                 player.applyAbilityOnPlayer(command-1);
                 player.updateCooldowns();
-                //chama o controller que atualiza os stats do player, manda o index 1
                 
                 break;
             
             case 3:
-                player.applyAbilityOnPlayer(command-1);
+                if(player.getShield() < 100){
+                    player.applyAbilityOnPlayer(command-1);
+                } else {
+                    cout << "You Already have maximum Shield" << endl;
+                }
+                
                 player.updateCooldowns();
-                //chama o controller que atualiza os stats do player, manda o index 2
                 
                 break;
             
