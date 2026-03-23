@@ -1,9 +1,12 @@
 #include <iostream>
+#include <ctime>
+#include <cstdlib>
 #include "../include/Ability.hpp"
 #include "../include/Player.hpp"
 #include "../include/Heal.hpp"
 #include "../include/Strength.hpp"
 #include "../include/Shield.hpp"
+
 
 using namespace std;
 
@@ -47,7 +50,8 @@ void Player::setShield(int shield){ this->shield = shield; }
 
 
 void Player::adventure(){
-    int difficulty = rand() % 20 + 5;
+    srand(time(0));
+    int difficulty = (rand() % 29) + 1;
 
     cout << "An enemy approach!" << endl;
     cout << "Enemy difficulty: " << difficulty << endl << endl;

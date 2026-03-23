@@ -16,7 +16,7 @@ class Player {
         int hp;
         int strength;
         int shield;
-        vector<Ability*> abilities; //heal, power, protection
+        vector<Ability*> abilities; //heal, strength, shield
 
     public:
         Player(string name);

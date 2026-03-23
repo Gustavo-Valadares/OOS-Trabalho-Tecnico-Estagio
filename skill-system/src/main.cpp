@@ -20,7 +20,3 @@ int main(){
     cout << "Game Over!" << endl;
     return 0;
 }
-
-// fazer:
-
-// colocar funções hpp e cpp em ordem alfabética 
