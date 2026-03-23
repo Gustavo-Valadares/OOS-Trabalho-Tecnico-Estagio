@@ -37,7 +37,7 @@ class Player {
     + void increaseShield()
     + void initializeAbilities()
     + void regenerateMana()
-    + void adventura()
+    + void adventure()
     + void updateCoolDowns()
     + void applyAbilityOnPlayer()
     + void consumeMana()

@@ -36,16 +36,17 @@ class Player {
         void setStrength(int power);
         void setShield(int shield);
 
+        void adventure();
+        void applyAbilityOnPlayer(int index);
+        void consumeMana(int manaCost);
         void increaseHp(int value);
         void increaseShield(int value);
         void increaseStrength(int value);
+        bool isDead();
         void initializeAbilities();
         void regenerateMana();
-        void adventure();
         void updateCoolDowns();
-        void applyAbilityOnPlayer(int index);
-        void consumeMana(int manaCost);
-        bool isDead();
+
 };
 
 #endif
