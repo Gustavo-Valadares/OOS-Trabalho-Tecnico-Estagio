@@ -11,7 +11,7 @@ Player::Player(string name)
     : name(name),
       mana(100),
       hp(100),
-      strength(),
+      strength(0),
       shield(0) {}
 
 Player::~Player(){
@@ -71,10 +71,9 @@ void Player::adventure(){
         int enemyHit = 2*difficulty;
 
         if(enemyHit > this->getShield()){
+            enemyHit -= this->getShield();
             this->setShield(0);
         }
-
-        enemyHit -= this->getShield();
 
         if(enemyHit > 0){
             this->setHp(this->getHp() - enemyHit);
@@ -110,7 +109,11 @@ void Player::regenerateMana(){
 }
 
 void Player::increaseHp(int value){
-    this->hp += value;
+    if((getHp() + value) > 100){
+       this->hp = 100; 
+    } else {
+        this->hp += value;
+    }
 }
 
 void Player::increaseStrength(int value){
