@@ -40,20 +40,20 @@ void View::displayMenu(Player& player){
         switch(command){
             case 1:
                 displayPlayerStats(player);
-                player.updateCooldowns();
+                player.updateCoolDowns();
                 
                 break;
 
             case 2:
-                displayAbilites(player);
-                player.updateCooldowns();
+                displayAbilities(player);
+                player.updateCoolDowns();
                 
                 break;
             
             case 3:
                 if(player.getMana() < 100){
                     player.regenerateMana();
-                    for(int i = 0; i < 2; i++) player.updateCooldowns();
+                    for(int i = 0; i < 2; i++) player.updateCoolDowns();
                 } else {
                     cout << "You Already have maximum Mana" << endl;
                 }
@@ -62,7 +62,7 @@ void View::displayMenu(Player& player){
 
             case 4:
                 player.adventure();
-                player.updateCooldowns();
+                player.updateCoolDowns();
 
                 break;
 
@@ -87,7 +87,7 @@ void View::displayPlayerStats(Player& player){
     return ;
 }
 
-void View::displayAbilites(Player& player){
+void View::displayAbilities(Player& player){
     int command;
     vector<Ability*> abilities = player.getAbilities();
 
@@ -114,13 +114,13 @@ void View::displayAbilites(Player& player){
                     cout << "You Already have maximum HP" << endl;
                 }
 
-                player.updateCooldowns();
+                player.updateCoolDowns();
                 
                 break;
 
             case 2:
                 player.applyAbilityOnPlayer(command-1);
-                player.updateCooldowns();
+                player.updateCoolDowns();
                 
                 break;
             
@@ -131,12 +131,12 @@ void View::displayAbilites(Player& player){
                     cout << "You Already have maximum Shield" << endl;
                 }
                 
-                player.updateCooldowns();
+                player.updateCoolDowns();
                 
                 break;
             
             case 0:
-                player.updateCooldowns();
+                player.updateCoolDowns();
                 return ;
 
             default:

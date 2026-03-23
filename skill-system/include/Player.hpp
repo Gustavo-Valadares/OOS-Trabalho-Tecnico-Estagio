@@ -42,7 +42,7 @@ class Player {
         void initializeAbilities();
         void regenerateMana();
         void adventure();
-        void updateCooldowns();
+        void updateCoolDowns();
         void applyAbilityOnPlayer(int index);
         void consumeMana(int manaCost);
         bool isDead();

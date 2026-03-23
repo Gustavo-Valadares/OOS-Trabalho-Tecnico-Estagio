@@ -11,7 +11,7 @@ class View {
     public:
         void displayMenu(Player& player);
         void displayPlayerStats(Player& player);
-        void displayAbilites(Player& player);
+        void displayAbilities(Player& player);
         void initialMenu();
 };
 

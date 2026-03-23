@@ -1,28 +1,64 @@
-@startuml
+@startuml SkillSystem
+
+abstract class Ability {
+    -string name
+    -int mana
+    -int abilityPoints
+    -int coolDownValue
+    -int currentCoolDown
+
+    + bool canActivate()
+    + void activate()
+}
+
+class Heal {
+    + applyEffect() 
+}
+
+class Shield {
+    + applyEffect() 
+}
+
+class Strength {
+    + applyEffect() 
+}
 
 class Player {
-    - name: string
+    - string name
     - int mana
-    - stats: vector<Stats>
-    - abilities: vector<Ability>
+    - int hp
+    - int strength
+    - int shield
+    - vector abilities
 
-    + addPlayerStats()
-    + updateCoolDowns()
-    + applyAbilityOnPlayer()
-    + consumeMana()
+    + void useAbility()
+    + void increaseHp()
+    + void increaseStrength()
+    + void increaseShield()
+    + void initializeAbilities()
+    + void regenerateMana()
+    + void adventura()
+    + void updateCoolDowns()
+    + void applyAbilityOnPlayer()
+    + void consumeMana()
+    + bool isDead()
+
 }
 
-class Ability {
-    - name: string
-    - manaCost: int
-    - abilityPoints: int
-    - coolDownValue: int
-    - currentCoolDown: int
+class View {
+    + void displayAbilities()
+    + void displayMenu()
+    + void displayPlayerStats()
+    + void initialMenu()
 
-    + canActivate()
-    + applyCoolDown()
 }
 
-Player "1" *-- "*" Ability
+' Relacionamentos baseados na estrutura de arquivos
+Ability <|-- Heal
+Ability <|-- Shield
+Ability <|-- Strength
+
+Player o-- Ability
+View ..> Player : "visualiza"
 
 @enduml

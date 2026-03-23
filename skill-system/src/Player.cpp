@@ -92,7 +92,7 @@ void Player::applyAbilityOnPlayer(int index){
 
 }
 
-void Player::updateCooldowns() {
+void Player::updateCoolDowns() {
     for(auto* a : this->abilities) {
         if(a->getCoolDown() > 0) {
             a->setCoolDown(a->getCoolDown() - 1);
